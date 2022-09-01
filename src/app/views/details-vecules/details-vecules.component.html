@@ -1,0 +1,124 @@
+
+<p-card class="lacarte">
+
+
+  <div class="matricule">
+   <div>
+
+
+     <p>Numero chassivehicule:{{Vehicul.numerochassie}}</p>
+     <p>  matricule: {{Vehicul.matricule}}</p>
+     <p *ngIf="Vehicul.status=='Innactif'" style="color: red">Status vehicule:{{Vehicul.status}}</p>
+     <p *ngIf="Vehicul.status=='PAsEnBOnneETats'" style="color: green">Status vehicule:{{Vehicul.status}}</p>
+     <p *ngIf="Vehicul.status=='Actif'" class="btn btn-success">Status vehicule:{{Vehicul.status}}</p>
+   </div>
+<div>
+<p> Date achat:{{Vehicul.dateAchat | date: 'dd/MM/yy' }}</p>
+  <p class="card-text">date sortie:{{Vehicul.dateSOrtie | date: 'dd/MM/yy' }}</p>
+  <p class="card-text"> Marque:{{Vehicul.modele.marque.libellet}}</p>
+</div>
+
+    <div>
+  <p >datesmis en marche :{{Vehicul.dateMisEnMarche| date: 'dd/MM/yy'}}</p>
+  <p class="card-text">Modele:{{Vehicul.modele.libellet}}</p>
+      <p class="card-text">nombre places:{{Vehicul.nombrePlace}}</p>
+
+    </div>
+    <div>
+  <p class="card-text">Etats:{{Vehicul.etats}}</p>
+      <p class="card-text">Types:{{Vehicul.modele.typesVehicules.libellet}}</p>
+      <p>Types de carburant:{{Vehicul.typesCarburant}}</p>
+
+    </div>
+  </div>
+</p-card>
+<div class="card shadow p-3 mb-5 bg-white rounded"style="width:79.7rem;margin-right:2%;margin-top: 1%">
+
+  <table class="table table-striped ">
+    <button class="btn btn-success" routerLink="/formulairepannes">nouveau</button>
+    <table class="table">
+      <thead>
+      <tr >
+
+        <th scope="col">pannes</th>
+        <th scope="col">description</th>
+        <th scope="col">status</th>
+        <th scope="col">date et heur</th>
+        <th scope="col">lieux</th>
+      </tr>
+      </thead>
+      <tbody class="table-group-divider"*ngIf="Vehicul.pannesVehicules">
+
+        <tr *ngFor="let v of Vehicul.pannesVehicules">
+
+        <td>{{v.pannes.libellet}}</td>
+        <td>{{v.description}}</td>
+          <td *ngIf="v.etat==true"><p style="color: green">resolue</p> </td>
+          <td *ngIf="v.etat==false"><p style="color:red">non resolue</p> </td>
+        <td>{{v.date| date: 'dd/MM/yy à HH:mm'}}</td>
+        <td>{{v.lieux}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </table>
+</div>
+
+<div class="card shadow p-3  bg-white rounded"style="width: 79.7rem;margin-right:2%;margin-top: 1%">
+  <table class="table table-striped ">
+    <button class="btn btn-success" routerLink="/formekilometrage">nouveau</button>
+    <table class="table">
+      <thead>
+      <tr >
+
+        <th scope="col">date</th>
+        <th scope="col">kilometrage</th>
+
+      </tr>
+      </thead>
+      <tbody class="table-group-divider">
+
+      <tr *ngFor="let k of Vehicul.kilometrageVehicules">
+        <td>{{k.dateEnregistrement| date: 'dd/MM/yy à HH:mm' }}</td>
+        <td>{{k.kilometrage}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </table>
+</div>
+
+<div class="card shadow p-3  bg-white rounded"style="width: 79.7rem;margin-right:2%;margin-top: 1%">
+  <table class="table table-striped ">
+    <button class="btn btn-success" routerLink="/formekilometrage">nouveau</button>
+    <table class="table">
+      <thead>
+      <tr >
+
+        <th scope="col">Prenom</th>
+        <th scope="col">Non</th>
+        <th scope="col">Date debut</th>
+        <th scope="col">Date fin</th>
+
+      </tr>
+      </thead>
+      <tbody class="table-group-divider">
+
+      <tr *ngFor="let a of Vehicul.affectations">
+        <td>{{a.chauffeur.prenoms}}</td>
+        <td>{{a.chauffeur.noms}}</td>
+        <td>{{a.dateDebut| date: 'dd/MM/yy à HH:mm'}} </td>
+        <td>{{a.dateFin| date: 'dd/MM/yy à HH:mm'}}</td>
+
+        <td>{{a.libellet}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </table>
+</div>
+
+
+
+
+
+

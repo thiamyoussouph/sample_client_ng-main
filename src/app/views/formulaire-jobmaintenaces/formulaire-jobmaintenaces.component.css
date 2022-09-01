@@ -1,0 +1,25 @@
+.formulaireajout{
+  display: inline-block;
+  margin-left: 2%;
+  margin-left: 12%;
+}
+input{
+  border-color: #25612F;
+}
+select{
+  border-color: #25612F;
+}
+label{
+  font-size: 18px;
+  text-align: center;
+  margin-left: 10px;
+}
+legend{
+
+  text-align: center;
+  color: #25612F;
+
+}
+div button{
+  background-color: #25612F;
+}

@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+  <div class="card"style="width: 81rem;margin-right:3%;height: 100%">
+  <div class="row">
+    <div class="col-8 col-md-4  col-sm-8 col-xl-4 formulaireajout">
+
+    <form [formGroup]="formulaires" (ngSubmit)="saveaffectation()">
+      <fieldset >
+
+          <legend>affectationt</legend>
+
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">chauffeur</label>
+            <select id="disabledSelects" class="form-select" formControlName="chauffeur">
+              <option *ngFor="let ch of chauffeur |async" [ngValue]="ch"> {{ch.prenoms}}</option>
+            </select>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Vehicules</label>
+            <select id="disabledSelect" class="form-select"formControlName="vehicules">
+              <option *ngFor="let v of Vehicule |async"[ngValue]="v" >{{v.matricule}}</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="disabledTextInputess" class="form-label">datedebut</label>
+            <input type="date" id="disabledTextInputess" class="form-control" formControlName="dateDebut" >
+          </div>
+
+
+          <div class="mb-3">
+            <label for="disabledTextInputs" class="form-label">Date fin</label>
+            <input type="date" id="disabledTextInputs" class="form-control" formControlName="dateFin" placeholder="Disabled input">
+          </div>
+          <div class="col-4" ><button  type="submit" class="btn btn-success">Ajouter</button></div>
+
+
+
+
+      </fieldset>
+    </form>
+    </div>
+    <div class="col-8 col-md-4  col-sm-8 col-xl-4 ">
+      <img src="../../assets/img/illustration-6.png" alt="" srcset="" height="98%" width="130%" style="margin-top: 1%">
+    </div>
+  </div>
+</div>
+</div>

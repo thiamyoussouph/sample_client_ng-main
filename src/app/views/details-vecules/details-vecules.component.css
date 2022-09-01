@@ -1,0 +1,14 @@
+.lacarte{
+border-left-style: groove;
+
+}
+.matricule{
+  display: flex;
+  justify-content:space-evenly;
+
+
+}
+button{
+  margin-left:90%;
+  margin-top:1%;
+}

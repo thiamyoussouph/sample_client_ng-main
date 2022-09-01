@@ -1,0 +1,14 @@
+ div{
+
+ }
+li{
+   list-style-type: none;
+   margin-bottom:20%;
+   color: rgb(68, 113, 136);
+   font-size: 18px;
+    font-weight:700;
+    font-family: Roboto;
+   line-height: 16px;
+   letter-spacing: 0.4px;
+
+ }

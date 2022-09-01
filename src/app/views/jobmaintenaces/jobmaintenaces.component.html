@@ -1,0 +1,25 @@
+<a class="btn" routerLink="/parametre/ajoutJop">ajouter</a>
+  <table class="table">
+    <thead>
+    <tr >
+      <th scope="col">#</th>
+      <th scope="col">matricule vehicule</th>
+      <th scope="col">Description</th>
+      <th scope="col">Types de job</th>
+      <th scope="col">date debut</th>
+      <th scope="col">date resolution</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr *ngFor="let j of jobmaintenances |async">
+      <td>{{j.id}}</td>
+      <td>{{j.vehicules.matricule}}</td>
+      <td>{{j.description}}</td>
+      <td>{{j.typesJobDeMaintenance.libelle}}</td>
+      <td>{{j.dateDebut| date: 'dd/MM/yy à HH:mm'}}</td>
+      <td>{{j.dateResolution| date: 'dd/MM/yy à HH:mm'}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+

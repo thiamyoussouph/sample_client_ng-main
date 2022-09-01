@@ -1,0 +1,29 @@
+<div class="card"style="width: 81rem;margin:0.2%">
+<table class="table table-striped ">
+  <a class="btn" routerLink="/formtaffectation">affecter</a>
+  <table class="table">
+    <thead>
+    <tr >
+      <th scope="col">#</th>
+      <th scope="col">matricule vehicule</th>
+      <th scope="col">marque vehicule</th>
+      <th scope="col">chauffeurs</th>
+      <th scope="col">date debut</th>
+      <th scope="col">datefin</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr *ngFor="let A of affectation|async">
+      <td>{{A.id}}</td>
+      <td>{{A.vehicules.matricule}}</td>
+      <td>{{A.vehicules.modele.marque.libellet}}</td>
+      <td>{{A.chauffeur.prenoms}} {{A.chauffeur.noms}}</td>
+      <td>{{A.dateDebut| date: 'dd/MM/yy à HH:mm'}}</td>
+      <td>{{A.dateFin| date: 'dd/MM/yy à HH:mm'}}</td>
+
+
+    </tr>
+    </tbody>
+  </table>
+</table>
+</div>

@@ -1,0 +1,40 @@
+
+
+
+<div class="row" style="margin-top:  2%">
+
+  <div class="col-8 col-md-4  col-sm-8 col-xl-4 formulaireajout">
+    <mat-card>
+    <form (ngSubmit)="Formesubmit()">
+      <fieldset >
+
+        <legend>formulaire d ajout</legend>
+
+
+        <div class="mb-3">
+          <label for="disabledTextInputess" class="form-label">login</label>
+          <input [(ngModel)]="loginDta.username" type="text" id="disabledTextInputess" class="form-control" name="username" >
+
+        </div>
+
+
+        <div class="mb-3">
+          <label for="disabledTextInputess" class="form-label">password</label>
+          <input [(ngModel)]="loginDta.password" type="password" id="abledTextInputess" class="form-control" name="password" >
+        </div>
+
+        <button mat-button color="accent">Accent</button>
+
+
+
+      </fieldset>
+    </form>
+  </mat-card>
+  </div>
+  <div class="col-8 col-md-4  col-sm-8 col-xl-4 ">
+
+  </div>
+
+</div>
+
+

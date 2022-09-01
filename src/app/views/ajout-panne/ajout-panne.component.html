@@ -1,0 +1,65 @@
+
+<div class="container-fluid">
+  <form action="">
+
+  </form>
+
+  <div class="row">
+    <div class="col-8 col-md-4  col-sm-8 col-xl-4 formulaireajout">
+      {{formulairePanne.value | json}}
+    <form [formGroup]="formulairePanne" (ngSubmit)="savepanne()">
+      <fieldset >
+
+          <legend>formulaire d ajout</legend>
+
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Pannes</label>
+            <select id="disabledSelects" class="form-select" formControlName="pannes">
+              <option *ngFor="let panne of panne|async"[ngValue]="panne">{{panne.libellet}}</option>
+            </select>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Vehicules</label>
+            <select id="disabledSelect" class="form-select"formControlName="vehicules">
+              <option   *ngFor="let modeles of Vehicul |async" [ngValue]="modeles">{{modeles.matricule}}</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="disabledTextInputess" class="form-label">lieu</label>
+            <input type="text" id="disabledTextInputess" class="form-control" formControlName="lieux" >
+          </div>
+
+
+        <div class="mb-3">
+        <label for="disabledTextInputess" class="form-label">Description</label>
+        <input type="text" id="abledTextInputess" class="form-control" formControlName="description" >
+      </div>
+        <div class="mb-3">
+          <label for="disabledSelect" class="form-label">niveau</label>
+          <select id="disabledSelec" class="form-select"formControlName="niveau">
+            <option value="BAS">BAS</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="HAUT">HAUT</option>
+          </select>
+        </div>
+          <div class="mb-3">
+            <label for="disabledTextInputs" class="form-label">Date d enregistrement</label>
+            <input type="date" id="disabledTextInputs" class="form-control" formControlName="date" placeholder="Disabled input">
+          </div>
+          <div class="col-4"><button  type="submit" class="btn btn-success">Ajouter</button></div>
+
+
+
+      </fieldset>
+    </form>
+    </div>
+    <div class="col-8 col-md-4  col-sm-8 col-xl-4 ">
+      <img src="../../assets/img/undraw.png" alt="" srcset="" height="73%" width="110%" style="margin-top: 21%">
+    </div>
+  </div>
+
+
+</div>
