@@ -1,0 +1,79 @@
+<p></p>
+<div class="search-div">
+  <button routerLink="/creerpanne"  mat-raised-button class="marg">nouveau
+    <mat-icon>add</mat-icon>
+  </button>
+  <mat-form-field class="search-form-field" floatLabel="never">
+ <input matInput [(ngModel)]="searchKey" placeholder="Search" autocapitalize="off" (keyup)="applyFilter()">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey"(click)="onserchClise()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="mat-elevation-z8">
+
+  <mat-table [dataSource]="listeData" matSort>
+    <ng-container matColumnDef="vehicules">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Véhicule </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.vehicules.matricule}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="typePanne">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>typrdpanne </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.typePanne.libellet}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="datedebut">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>date d enregistrement</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.datedebut | date: 'dd/MM/yy à HH:mm'}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dlieu">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>lieu</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lieu}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lieu">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>lieu</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lieu}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="cause">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>cause</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.cause}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="impacte">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>impacte</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.impacte}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="urgence">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>urgence</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.urgence}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>action</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="edit(row.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(row.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colpan="6">
+        Loading...
+      </mat-footer-cell>
+    </ng-container>
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colpan="6">
+        NoData...
+      </mat-footer-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+   <mat-footer-row *matFooterRowDef="['loading']"[ngClass]="{'hide':listeData!=null}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']"[ngClass]="{'hide':!(listeData!=null && listeData.data.length==0)}"></mat-footer-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
+
+
+

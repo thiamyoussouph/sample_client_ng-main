@@ -1,0 +1,84 @@
+<p></p>
+
+<div class="card">
+  <div class="card-header text-white "style="background-color: #93c27e;text-align: center">
+   <h2>ajout panne</h2>
+</div>
+
+  <div class="card-body">
+    <form [formGroup]="formulaires" (ngSubmit)="saveeventpanne()">
+ <div class="row">
+
+ <div class="col-md-6 mb-3">
+ <label>vehicule</label>
+   <select class="form-select" aria-label="Default select example"formControlName="vehicules">
+     <option selected>selection un vehicule</option>
+     <option  *ngFor="let v of vehicule | async" [ngValue]="v">{{v.matricule}}</option>
+
+   </select>
+ </div>
+
+   <div class="col-md-6 mb-3">
+     <label>types pannes</label>
+     <select class="form-select" aria-label="Default select example"formControlName="typePanne">
+       <option selected>selection un vehicule</option>
+       <option  *ngFor="let p of pannes | async" [ngValue]="p">{{p.libellet}}</option>
+
+     </select>
+   </div>
+   <div class="col-md-6 mb-3">
+     <label>lieu</label>
+     <input type="text" class="form-control" id="noms" formControlName="lieu" placeholder="lieu" required
+            [ngClass]="{'is-invalid':formulaires.get('lieu').touched && !formulaires.get('lieu').valid}" required minlength="4">
+     <div class="invalid-feedback">
+       <span *ngIf="formulaires.get('lieu').errors ?.required">entrez les bonnes information</span>
+       <span *ngIf="formulaires.get('lieu').errors ?.minlength">minimun 4</span>
+     </div>
+   </div>
+   <div class="col-md-6 mb-3">
+     <label>datedebut</label>
+     <input type="date" class="form-control" id="no" formControlName="datedebut" placeholder="lieu" required
+            [ngClass]="{'is-invalid':formulaires.get('datedebut').touched && !formulaires.get('datedebut').valid}" required >
+     <div class="invalid-feedback">
+       <span *ngIf="formulaires.get('datedebut').errors ?.required">entrez les bonnes information</span>
+
+     </div>
+   </div>
+
+    <div class="col-md-6 mb-3">
+      <label>impacte</label>
+      <select class="form-select" aria-label="Default select example" formControlName="impacte">
+        <option selected>selection l impact</option>
+        <option value="Fort">Faible</option>
+        <option value="Moyen">Moyen</option>
+        <option value="Fort">Fort</option>
+      </select>
+    </div>
+   <div class="col-md-6 mb-3">
+     <label>urgence</label>
+     <select class="form-select" aria-label="Default select example"formControlName="urgence">
+       <option selected>selection l urgence</option>
+       <option value="Faible">Faible</option>
+       <option value="Moyen">Moyen</option>
+       <option value="Fort">Fort</option>
+     </select>
+   </div>
+   <div class="col-md-6 mb-3">
+     <label>cause</label>
+     <input type="text" class="form-control" id="cause" formControlName="cause" placeholder="cause" required
+            [ngClass]="{'is-invalid':formulaires.get('cause').touched && !formulaires.get('cause').valid}" required required minlength="8">
+     <div class="invalid-feedback">
+       <span *ngIf="formulaires.get('cause').errors ?.required">entrez les bonnes information</span>
+       <span *ngIf="formulaires.get('cause').errors ?.minlength">minimun 8 caractère</span>
+     </div>
+   </div>
+
+ </div>
+      <div class="text-right">
+        <button class="btn btn-success" [disabled]="formulaires.invalid" type="submit">ajouter</button>
+      </div>
+    </form>
+</div>
+
+</div>
+

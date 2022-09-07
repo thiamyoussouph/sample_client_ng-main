@@ -1,6 +1,6 @@
 
 
-export interface Pannes{
+export interface typesPannes{
   id:number,
   libellet:string
 }

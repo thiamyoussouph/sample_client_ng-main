@@ -1,0 +1,54 @@
+<p></p>
+<button routerLink="/creeracccident"  mat-raised-button class="marg">nouveau
+  <mat-icon>add</mat-icon>
+</button>
+<div class="mat-elevation-z8">
+
+  <mat-table [dataSource]="listeData">
+    <ng-container matColumnDef="vehicules">
+      <mat-header-cell *matHeaderCellDef>Véhicule </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.vehicules.matricule}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef>description </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="datedebut">
+      <mat-header-cell *matHeaderCellDef>date d enregistrement</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.datedebut | date: 'dd/MM/yy à HH:mm'}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dlieu">
+      <mat-header-cell *matHeaderCellDef>lieu</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lieu}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lieu">
+      <mat-header-cell *matHeaderCellDef>lieu</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lieu}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="cause">
+      <mat-header-cell *matHeaderCellDef>cause</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.cause}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="impacte">
+      <mat-header-cell *matHeaderCellDef>impacte</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.impacte}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="urgence">
+      <mat-header-cell *matHeaderCellDef>urgence</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.urgence}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>action</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="edit(row.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(row.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

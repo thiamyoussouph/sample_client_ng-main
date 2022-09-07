@@ -22,6 +22,14 @@ import {FormulaireKilometrageComponent} from "./views/formulaire-kilometrage/for
 import {JobmaintenacesComponent} from "./views/jobmaintenaces/jobmaintenaces.component";
 import {ListetypmaintenacesComponent} from "./views/listetypmaintenaces/listetypmaintenaces.component";
 import {FormulaireJobmaintenacesComponent} from "./views/formulaire-jobmaintenaces/formulaire-jobmaintenaces.component";
+import {EventSComponent} from "./views/event-s/event-s.component";
+import {FormulaireEventSComponent} from "./views/formulaire-event-s/formulaire-event-s.component";
+import {FormulaireeventPanneComponent} from "./views/formulaireevent-panne/formulaireevent-panne.component";
+import {AccidentEventComponent} from "./views/accident-event/accident-event.component";
+import {FormulaireJOBmaintenanceComponent} from "./views/formulaire-jobmaintenance/formulaire-jobmaintenance.component";
+import {ListeEventpanneComponent} from "./views/liste-eventpanne/liste-eventpanne.component";
+import {LisJOBmaintenanceEventComponent} from "./views/lis-jobmaintenance-event/lis-jobmaintenance-event.component";
+import {ListaccidentEventComponent} from "./views/listaccident-event/listaccident-event.component";
 
 
 const routes: Routes = [
@@ -74,7 +82,28 @@ const routes: Routes = [
   {path: 'affectation', component: ListAffectationComponent,
     data: {
       breadcrumb: 'affectation',}},
-  {path: 'formtaffectation', component:AjoutaffectationComponent}
+  {path: 'formtaffectation', component:AjoutaffectationComponent},
+  {path: 'event', component:EventSComponent ,
+    data: {
+      breadcrumb: 'evenement',}},
+  {path: 'eventforme', component:FormulaireEventSComponent ,
+    data: {
+      breadcrumb: 'ajouter',}},
+  {path: 'creerpanne', component:FormulaireeventPanneComponent,
+    data: {
+      breadcrumb: 'formulaire panne',}},
+  {path: 'creeracccident', component:AccidentEventComponent,
+    data: {
+      breadcrumb: 'formulaire accidents',}},
+  {path: 'creerjob', component:FormulaireJOBmaintenanceComponent},
+  {path: 'evetlistePanne', component:ListeEventpanneComponent,
+    data: {
+      breadcrumb: 'Pannes',}},
+  {path: 'evetlistejob', component:LisJOBmaintenanceEventComponent  ,data: {
+      breadcrumb: 'Jobs',}},
+  {path: 'evetlisteaccident', component:ListaccidentEventComponent,
+    data: {
+      breadcrumb: 'Accidents',}},
 
 ];
 

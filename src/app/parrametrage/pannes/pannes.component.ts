@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PannesService} from "../../_services/pannes.service";
 import {catchError, Observable, throwError} from "rxjs";
 
-import {Pannes} from "../../_models/pannesModel";
+import {typesPannes} from "../../_models/typesPannesModel";
 
 @Component({
   selector: 'app-pannes',
@@ -10,14 +10,14 @@ import {Pannes} from "../../_models/pannesModel";
   styleUrls: ['./pannes.component.css']
 })
 export class PannesComponent implements OnInit {
-  pannes:Pannes[];
+  pannes:typesPannes[];
   productDialog: boolean;
 
 
 
   panne: {};
 
-  selectedProducts: Pannes[];
+  selectedProducts: typesPannes[];
 
   submitted: boolean;
 
@@ -55,12 +55,12 @@ export class PannesComponent implements OnInit {
   deleteSelectedProducts() {
   }
 
-  editProduct(product: Pannes) {
+  editProduct(product: typesPannes) {
     this.panne = {...product};
     this.productDialog = true;
   }
 
-  deleteProduct(product:Pannes) {
+  deleteProduct(product:typesPannes) {
 ;
   }
 

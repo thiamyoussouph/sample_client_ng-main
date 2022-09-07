@@ -1,5 +1,5 @@
 import {Vehicule} from "./vehicule";
-import {Pannes} from "./pannesModel";
+
 
 export interface PannesVehicule{
   id:number,
@@ -8,7 +8,7 @@ export interface PannesVehicule{
   description:string,
   etat:boolean,
   vehicules:Vehicule,
-  pannes:Pannes
+
   niveau:string ,
 
 }

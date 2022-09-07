@@ -1,5 +1,5 @@
 import {Vehicule} from "./vehicule";
-import {Pannes} from "./pannesModel";
+
 import {TypesJopeMAIntenaces} from "./TypesJopeMAIntenaces";
 
 export interface JobDeMaintenace {

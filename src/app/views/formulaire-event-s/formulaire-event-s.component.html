@@ -1,0 +1,122 @@
+<p>formulaire-event-s works!</p>
+<div class="container-fluid">
+
+  <div class="row">
+
+    <form novalidate (ngSubmit)="SaveEvents" [formGroup]="formulaire"  >
+
+      <fieldset >
+        <div class="col-8 col-md-4  col-sm-8 col-xl-4 formulaireajout">
+          <legend>formulaire d ajout</legend>
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Vehicules</label>
+            <select id="disabledSelect" class="form-select"formControlName="vehicules">
+              <option   *ngFor="let v of vehicule | async" [ngValue]="v">{{v.matricule}}</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label  class="form-label">description</label>
+            <input type="text"  class="form-control"  placeholder="expl A33-BT-72"   formControlName="description"
+                   [ngClass]="{'is-invalid':formulaire.get('description').touched && !formulaire.get('description').valid}" required minlength="4">
+            <div class="invalid-feedback">
+             <span *ngIf="formulaire.get('description').errors ?.required">entrer les bonnes information</span>
+              <span *ngIf="formulaire.get('description').errors ?.required">minimun 4</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="disabledTextInpt" class="form-label">lieu</label>
+            <input type="text" id="disabledTextInpt" class="form-control"  placeholder="expl A33-BT-72" formControlName="lieu" required
+                   [ngClass]="{'is-invalid':formulaire.get('lieu').touched && !formulaire.get('lieu').valid}">
+            <div class="invalid-feedback">
+              <span *ngIf="formulaire.get('lieu').errors ?.required">entrer les bonnes information</span>
+              <span *ngIf="formulaire.get('lieu').errors ?.minlength">minimun 4</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="disabledTextInputs" class="form-label">datedebut</label>
+            <input type="date" id="disabledTextInputs" class="form-control"  placeholder="Disabled input" formControlName="datedebut" required
+
+                   [ngClass]="{'is-invalid':formulaire.get('datedebut').touched && !formulaire.get('datedebut').valid}" >
+            <div class="invalid-feedback">
+              <span *ngIf="formulaire.get('datedebut').errors ?.required">entrer les bonnes information</span>
+              <span *ngIf="formulaire.get('datedebut').errors ?.minlength">minimun 4</span>
+            </div>
+          </div>
+          <div class="form-row mb-3 d-flex">
+            <div class="col-md-4">
+              <div class="form-check mt-4 pt-3">
+                <label for="" class="form-check-label">incident
+                <input type="checkbox" class="form-check-input" formControlName="incident">
+                </label>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-check mt-4 pt-3">
+                <label for="" class="form-check-label">jop
+                  <input type="checkbox" class="form-check-input" formControlName="job" >
+                </label>
+              </div>
+              </div>
+          </div>
+
+
+
+
+        <div class="form-row mb-3"*ngIf="formulaire.get('job').value">
+          <div class="col-md-12">
+            <div class="form-check mt-4 pt-3">
+              <label for="">jobmaintenance</label>
+              <input type="text" class="form-control" formControlName="libelle">
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+</div>
+
+        <div class="col-8 col-md-4  col-sm-8 col-xl-4 formulaireajout"*ngIf="formulaire.get('incident').value">
+          <div class="form-row mb-3">
+            <div class="col-md-12">
+              <div class="form-check mt-4 pt-3">
+                <label for="">causes</label>
+                <input type="text" class="form-control" formControlName="cause">
+              </div>
+              <div class="form-check mt-4 pt-3">
+                <label for="">types</label>
+                <input type="text" class="form-control" formControlName="type">
+              </div>
+              <div class="form-check mt-4 pt-3">
+                <label for="">description</label>
+                <input type="text" class="form-control" formControlName="description">
+              </div>
+              <div>
+                <label for="">typepanne</label>
+                <input type="text" class="form-control" formControlName="typespanne">
+              </div>
+            </div>
+
+            <label for="disabledSele" class="form-label">impacte</label>
+            <select id="disabledSeled" class="form-select" formControlName="status">
+              <option value="Fort">Fort</option>
+              <option value="Moyen">Moyen</option>
+              <option value="Faible">Faible</option>
+            </select>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="col-4"><button  type="submit" class="btn btn-success">Ajouter</button></div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
+

@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
 import {MenuItem,} from 'primeng/api';
 import {getChildElementIndentation} from "@angular/cdk/schematics";
+import {FormulaireeventPanneComponent} from "../views/formulaireevent-panne/formulaireevent-panne.component";
+import {AccidentEventComponent} from "../views/accident-event/accident-event.component";
+import {
+  FormulaireJOBmaintenanceComponent
+} from "../views/formulaire-jobmaintenance/formulaire-jobmaintenance.component";
 
 
 
@@ -28,17 +33,13 @@ export class SidebarComponent implements OnInit {
         ]
       },
       {
-        label: 'Pannes',
+        label: 'Evennements',
         items: [
-          { label: 'Tous', icon: 'pi pi-fw pi-list',routerLink:'pannes'},
-          { label: 'Creer', icon: 'pi pi-fw pi-plus',routerLink:'formulairepannes'}
-        ]
-      },
-      {
-        label: 'Rappelles',
-        items: [
-          { label: 'Tous', icon: 'pi pi-fw pi-list', },
-          { label: 'Creer', icon: 'pi pi-fw pi-plus'}
+          { label: 'Tous', icon: 'pi pi-fw pi-list',routerLink:'event'},
+          { label: ' Pannes', icon: 'pi pi-fw pi-list',routerLink:['evetlistePanne'] },
+          { label: 'accidents', icon: 'pi pi-fw pi-list',routerLink:'evetlisteaccident'},
+          { label: 'Jobs', icon: 'pi pi-fw pi-list',routerLink:'evetlistejob'}
+
         ]
       },
       {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Pannes} from "../_models/pannesModel";
+
 import {environment} from "../../environments/environment";
 import {PannesVehicule} from "../_models/PannesVehicule";
 import {Vehicule} from "../_models/vehicule";

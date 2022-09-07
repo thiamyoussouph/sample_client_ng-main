@@ -53,6 +53,20 @@ import {InputNumberModule} from "primeng/inputnumber";
 import { JobmaintenacesComponent } from './views/jobmaintenaces/jobmaintenaces.component';
 import { ListetypmaintenacesComponent } from './views/listetypmaintenaces/listetypmaintenaces.component';
 import { FormulaireJobmaintenacesComponent } from './views/formulaire-jobmaintenaces/formulaire-jobmaintenaces.component';
+import { EventSComponent } from './views/event-s/event-s.component';
+import { FormulaireEventSComponent } from './views/formulaire-event-s/formulaire-event-s.component';
+import { FormulaireeventPanneComponent } from './views/formulaireevent-panne/formulaireevent-panne.component';
+import { AccidentEventComponent } from './views/accident-event/accident-event.component';
+import { FormulaireJOBmaintenanceComponent } from './views/formulaire-jobmaintenance/formulaire-jobmaintenance.component';
+import { ListeEventpanneComponent } from './views/liste-eventpanne/liste-eventpanne.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import { LisJOBmaintenanceEventComponent } from './views/lis-jobmaintenance-event/lis-jobmaintenance-event.component';
+import { ListaccidentEventComponent } from './views/listaccident-event/listaccident-event.component';
+import {MatSortable, MatSortModule} from "@angular/material/sort";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 
@@ -85,6 +99,14 @@ import { FormulaireJobmaintenacesComponent } from './views/formulaire-jobmainten
     FormulaireJobmaintenacesComponent,
     ListAffectationComponent,
     AjoutaffectationComponent,
+    EventSComponent,
+    FormulaireEventSComponent,
+    FormulaireeventPanneComponent,
+    AccidentEventComponent,
+    FormulaireJOBmaintenanceComponent,
+    ListeEventpanneComponent,
+    LisJOBmaintenanceEventComponent,
+    ListaccidentEventComponent,
 
   ],
   imports: [
@@ -110,7 +132,14 @@ import { FormulaireJobmaintenacesComponent } from './views/formulaire-jobmainten
     RatingModule,
     TableModule,
     DropdownModule,
-    InputNumberModule
+    InputNumberModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatIconModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
 
   ],
   providers: [ autInterceptorProviders ],

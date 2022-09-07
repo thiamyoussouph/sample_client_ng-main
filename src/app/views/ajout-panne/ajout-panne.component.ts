@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {catchError, Observable, throwError} from "rxjs";
 import {Vehicule} from "../../_models/vehicule";
 import {VehiculeService} from "../../_services/vehiculeService";
-import {Pannes} from "../../_models/pannesModel";
+import {typesPannes} from "../../_models/typesPannesModel";
 import {PannesService} from "../../_services/pannes.service";
 import {PannesVehiculeService} from "../../_services/pannes-vehicule.service";
 
@@ -15,7 +15,7 @@ import {PannesVehiculeService} from "../../_services/pannes-vehicule.service";
 export class AjoutPanneComponent implements OnInit {
   Vehicul!:Observable<Array<Vehicule>>;
   formulairePanne!: FormGroup
-  panne!:Observable<Array<Pannes>>;
+  panne!:Observable<Array<typesPannes>>;
   private errorMessage: any;
 
   constructor(private form:FormBuilder,private service: VehiculeService,private panneservice:PannesService,private  pannesVehiculeService:PannesVehiculeService) { }
